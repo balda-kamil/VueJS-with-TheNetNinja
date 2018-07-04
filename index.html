@@ -11,8 +11,10 @@
 <body>
     <div id="vue-app">
         <h1>{{ greet('wieczór') }}</h1>
-        <p>name: {{ name }}</p>
-        <p>job: {{ job }}</p>
+        <a v-bind:href="website">Wirtualna Polska</a>
+        <input type="text" v-bind:value="name">
+        <p v-html="websiteTag"></p>
+
     </div>
     <script src="app.js"></script>
 </body>
