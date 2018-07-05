@@ -9,12 +9,13 @@
 <body>
     <div id="vue-app">
         <h1>Events</h1>
-        <button v-on:click="add(1)">+</button>
+        <button v-on:click.once="add(1)">+</button>
         <button v-on:click="odd(1)">-</button>
         <button v-on:dblclick="add(10)">+ 10</button>
         <button v-on:dblclick="odd(10)">- 10</button>
         <p>My age is {{ age }}</p>
         <div class="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+        <a v-on:click.prevent="click" href="https://www.wp.pl">Wirtualna Polska</a>
     </div>
     <script src="app.js"></script>
 </body>
