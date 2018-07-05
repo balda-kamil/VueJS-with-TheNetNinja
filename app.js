@@ -1,23 +1,11 @@
 new Vue({
     el: '#vue-app',
-    data: {
-        age: 27,
-        x: 0,
-        y: 0
-    },
     methods: {
-        add: function(inc){
-            this.age += inc;
+        logName: function(){
+            console.log('name entered')
         },
-        odd: function(dec){
-            this.age -= dec;
+        logAge: function(){
+            console.log('age entered')
         },
-        updateXY: function(e){
-            this.x = e.offsetX;
-            this.y = e.offsetY;
-        },
-        click: function(){
-            alert('You clicked me!')
-        }
     }
 })
