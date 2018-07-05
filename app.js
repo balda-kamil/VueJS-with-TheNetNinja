@@ -1,14 +1,20 @@
 new Vue({
     el: '#vue-app',
     data: {
-        name: 'Kamil',
-        job: 'front-end developer',
-        website: 'https://www.wp.pl',
-        websiteTag: '<a href="https://www.wp.pl">Stronka wp.pl</a>'
+        age: 27,
+        x: 0,
+        y: 0
     },
     methods: {
-        greet: function(time){
-            return 'Dobry ' + time +' '+ this.name;
+        add: function(inc){
+            this.age += inc;
+        },
+        odd: function(dec){
+            this.age -= dec;
+        },
+        updateXY: function(e){
+            this.x = e.offsetX;
+            this.y = e.offsetY;
         }
     }
 })
