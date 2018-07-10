@@ -1,30 +1,37 @@
+
 <template>
     <footer>
-        <p>{{ copyright }}</p>
+        <p>Copyright 2017 {{ title }}</p>
     </footer>
 </template>
-
 <script>
-
+// imports
+import { bus } from '../main';
 export default {
-    data () {
-        return {
-            copyright: 'Copyright 2018 Vue Ninjas'
+    props: {
+      title: {
+        type: String,
+        required: true
+      }
+    },
+    data(){
+        return{
         }
+    },
+    created(){
+        bus.$on('titleChanged', (data) => {
+            this.title = data;
+        });
     }
 }
 </script>
-
 <style scoped>
-
 footer{
     background: #222;
     padding: 6px;
-
 }
 p{
-    color: lightgreen;
-    text-align: center;
+        color: lightgreen;
+        text-align: center;
 }
-
 </style>
