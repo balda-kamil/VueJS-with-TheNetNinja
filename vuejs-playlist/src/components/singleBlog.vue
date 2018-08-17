@@ -8,7 +8,6 @@
       <li v-for="category in blog.categories">{{ category }}</li>
     </ul>
   </div>
-  </div>
 </template>
 
 <script>

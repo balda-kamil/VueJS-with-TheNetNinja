@@ -3,8 +3,8 @@
         <h1>All Blog Articles</h1>
         <input type="text" v-model="search" placeholder="search blogs" />
         <div v-for="blog in filteredBlogs" class="single-blog">
-            <router-link v-bind:to="'/blog/' + blog.id"><h2>{{ blog.title | toUppercase }}</h2></router-link>
-            <article>{{ blog.content }}</article>
+            <router-link v-bind:to="'/blog/' + blog.id"><h2>{{ blog.title }}</h2></router-link>
+            <article>{{ blog.content.slice(0, 250) + '...' }}</article>
         </div>
     </div>
 </template>
@@ -25,37 +25,20 @@ export default {
         this.$http.get('https://vue-blog-e2078.firebaseio.com/posts.json').then(function(data){
           return data.json();
         }).then(function(data){
-          var blogsArray = [];
-          for (let key in data){
-            data[key].id = key;
-            blogsArray.push(data[key]);
-          }
-          this.blogs = blogsArray;
-        })
-    },
-    computed: {
-        
-    },
-    filters: {
-        /*'to-uppercase': function(value){
-            return value.toUpperCase();
-        }*/
-        toUppercase(value){
-            return value.toUpperCase();
-        }
-    },
-    directives: {
-        'rainbow' :{
-            bind(el, binding, vnode){
-                el.style.color = "#" + Math.random().toString(16).slice(2, 8);
+            var blogsArray = [];
+            for (let key in data){
+                data[key].id = key;
+                blogsArray.push(data[key]);
             }
-        }
+            this.blogs = blogsArray;
+            //console.log(this.blogs);
+        });
     },
     mixins: [searchMixin]
 }
 </script>
 
-<style>
+<style scoped>
 #show-blogs{
     max-width: 800px;
     margin: 0px auto;
@@ -65,5 +48,15 @@ export default {
     margin: 20px 0;
     box-sizing: border-box;
     background: #eee;
+    border: 1px dotted #aaa;
+}
+#show-blogs a{
+    color: #444;
+    text-decoration: none;
+}
+input[type="text"]{
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
 </style>

@@ -72,8 +72,9 @@ export default {
     box-sizing: border-box;
 }
 #add-blog{
-    margin: 20px auto;
-    max-width: 500px;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
 }
 label{
     display: block;
@@ -83,6 +84,9 @@ input[type="text"], textarea{
     display: block;
     width: 100%;
     padding: 8px;
+}
+textarea{
+  height:200px;
 }
 #preview{
     padding: 10px 20px;
@@ -99,5 +103,19 @@ h3{
 #checkboxes label{
     display: inline-block;
     margin-top: 0;
+}
+hr{
+  display: none;
+}
+button{
+  display: block;
+  margin: 20px 0;
+  background: crimson;
+  color: #fff;
+  border: 0;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
 }
 </style>

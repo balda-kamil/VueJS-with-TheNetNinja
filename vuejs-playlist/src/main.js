@@ -12,11 +12,6 @@ const router = new VueRouter({
   routes: Routes,
   mode: 'history'
 });
-// Filters
-/*
-Vue.filter('to-uppercase', function(value){
-    return value.toUpperCase();
-}); */
 
 new Vue({
   el: '#app',
