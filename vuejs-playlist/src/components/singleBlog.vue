@@ -22,9 +22,10 @@
           this.$http.get('https://vue-blog-e2078.firebaseio.com/posts/' + this.id + '.json').then(function(data) {
             return data.json();
           }).then(function(data){
+            console.log(data.content)
             this.blog = data;
           })
-        }
+        },
       }
 </script>
 

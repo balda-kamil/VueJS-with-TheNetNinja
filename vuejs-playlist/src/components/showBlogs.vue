@@ -19,8 +19,6 @@ export default {
             search: ''
         }
     },
-    methods: {
-    },
     created() {
         this.$http.get('https://vue-blog-e2078.firebaseio.com/posts.json').then(function(data){
           return data.json();
